@@ -9,7 +9,10 @@ var hoverReset = Chart.DatasetController.prototype.removeHoverStyle.length === 2
 
 var EXPANDO_KEY = '$colorschemes';
 
-Chart.defaults.global.plugins.colorschemes = {
+// Chartjs 2 => Chart.defaults.global
+// Chartjs 3 => Chart.defaults
+const pluginBase = Chart.defaults.global || Chart.defaults;
+pluginBase.plugins.colorschemes = {
 	scheme: 'brewer.Paired12',
 	fillAlpha: 0.5,
 	reverse: false,
